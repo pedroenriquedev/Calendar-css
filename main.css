@@ -1,0 +1,213 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 140vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(#c31432), to(#240b36));
+  background-image: linear-gradient(to right, #c31432, #240b36);
+}
+
+.calendar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (12.51vw)[7];
+      grid-template-columns: repeat(7, 12.51vw);
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+  grid-auto-rows: 120px;
+  background-color: #fff;
+  color: #99a1a7;
+  font-size: 1.2rem;
+}
+
+.calendar__footer {
+  background-color: #fff;
+  height: 6rem;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.calendar__weekdays {
+  text-transform: uppercase;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.calendar__days {
+  text-align: end;
+  padding: 1rem;
+  border-top: .1px solid #c7c7c7;
+  border-right: .1px solid #c7c7c7;
+}
+
+.calendar__days:nth-of-type(n+8):nth-of-type(-n+14) {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.calendar__days:nth-of-type(n+15):nth-of-type(-n+21) {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.calendar__days:nth-of-type(n+22):nth-of-type(-n+28) {
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.calendar__days:nth-of-type(n+29):nth-of-type(-n+35) {
+  -ms-grid-row: 5;
+  grid-row: 5;
+}
+
+.calendar__days:nth-of-type(n+36):nth-of-type(-n+42) {
+  -ms-grid-row: 6;
+  grid-row: 6;
+  border-bottom: .1px solid #c7c7c7;
+}
+
+.calendar__days:nth-of-type(7n+1) {
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+}
+
+.calendar__days:nth-of-type(7n+2) {
+  -ms-grid-column: 2;
+  grid-column: 2/2;
+}
+
+.calendar__days:nth-of-type(7n+3) {
+  -ms-grid-column: 3;
+  grid-column: 3/3;
+}
+
+.calendar__days:nth-of-type(7n+4) {
+  -ms-grid-column: 4;
+  grid-column: 4/4;
+}
+
+.calendar__days:nth-of-type(7n+5) {
+  -ms-grid-column: 5;
+  grid-column: 5/5;
+}
+
+.calendar__days:nth-of-type(7n+6) {
+  -ms-grid-column: 6;
+  grid-column: 6/6;
+}
+
+.calendar__days:nth-of-type(7n+7) {
+  -ms-grid-column: 7;
+  grid-column: 7/7;
+}
+
+.calendar__days--past {
+  position: relative;
+  z-index: 10;
+}
+
+.calendar__days--past::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-image: url("test/streaks-grey-stripes-white-lines-3200x1800-c2-808080-ffffff-l2-192-192-a-135-f-1.png");
+  background-size: cover;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.calendar__header {
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 1.2rem;
+  text-align: center;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.calendar__header h2 {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.calendar__header h3 {
+  font-size: 1.4rem;
+  color: #6d6d6d;
+}
+
+.calendar__container {
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.27);
+}
+
+.mark {
+  padding: 4px 5px;
+  margin: 5px;
+  border-radius: 2px;
+}
+
+.mark--1 {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / span 3;
+  background: rgba(253, 197, 208, 0.7);
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  color: orchid;
+  border-left: 3px solid orchid;
+}
+
+.mark--2 {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4 / span 3;
+  background: rgba(255, 228, 187, 0.7);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: orange;
+  border-left: 3px solid orange;
+}
+/*# sourceMappingURL=main.css.map */
